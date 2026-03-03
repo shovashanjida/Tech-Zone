@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
                             Image.asset('assets/homepageImage/smartphone1.png')
                         ),
                       Text('Smartphone'),
-                    ],
+                    ],Y
                   ),
                 onTap: (){
                   Navigator.push(context,
