@@ -7,32 +7,20 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color(0xFF0F2027),
-              Color(0xFF203A43),
-              Color(0xFF2C5364),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
-        child: SafeArea(
-          child: ListView(
-            children: [
-              buildExpansionTile(context, "Laptop", ["ASUS", "HP"]),
-              const Divider(color: Colors.white24),
-              buildExpansionTile(context, "Desktop PC", ["Gaming PC", "Office PC"]),
-              const Divider(color: Colors.white24),
-              buildExpansionTile(context, "PC Components", ["RAM", "SSD", "GPU"]),
-              const Divider(color: Colors.white24),
-              buildExpansionTile(context, "Smartphone", ["Samsung", "Oppo"]),
-              const Divider(color: Colors.white24),
-              buildExpansionTile(context, "Monitor", ["ASUS", "LG"]),
-            ],
-          ),
+      backgroundColor: Colors.black,
+      child: SafeArea(
+        child: ListView(
+          children: [
+            buildExpansionTile(context, "Laptop", ["ASUS", "HP"]),
+            const Divider(color: Colors.white24),
+            buildExpansionTile(context, "Desktop PC", ["Gaming PC", "Office PC"]),
+            const Divider(color: Colors.white24),
+            buildExpansionTile(context, "PC Components", ["RAM", "SSD", "GPU"]),
+            const Divider(color: Colors.white24),
+            buildExpansionTile(context, "Smartphone", ["Samsung", "Oppo"]),
+            const Divider(color: Colors.white24),
+            buildExpansionTile(context, "Monitor", ["ASUS", "LG"]),
+          ],
         ),
       ),
     );

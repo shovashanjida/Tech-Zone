@@ -83,7 +83,7 @@ final List<Product> dummyProducts = [
     id: "9",
     name: "Oppo Reno14 5G 12GB RAM 256GB ROM AMOLED 6.59 inches Smartphone (Opal White)",
     brand: "Oppo",
-    category: "Smartphones",
+    category: "Smartphone",
     price: 86790,
     image: "assets/oppo.png",
     description: "Cellular Network - 5G |Display size - 6.59 inches |Display Type - AMOLED|CPU Series - MediaTek Dimensity",

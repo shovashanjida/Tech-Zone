@@ -79,7 +79,7 @@ class ProductListScreen extends StatelessWidget {
                         const Text(
                           "In Stock",
                           style: TextStyle(
-                            color: Colors.black87,
+                            color: Colors.blue,
                             fontSize: 13,
                           ),
                         ),

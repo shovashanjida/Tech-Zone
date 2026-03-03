@@ -79,7 +79,8 @@ class _PCBuilderPageState extends State<PCBuilderPage> {
                       overlayColor: Colors.blueGrey,
                       padding: EdgeInsets.symmetric(horizontal: 18),
                     shadowColor: Colors.redAccent,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4))
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4))
                   ),
                     onPressed: (){},
                     child: Column(

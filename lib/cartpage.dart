@@ -15,13 +15,33 @@ class _CartPageState extends State<CartPage>{
       appBar: AppBar(title: Text('Cart'),
         backgroundColor: Colors.black87,
         foregroundColor: Colors.white,),
-      body: Column(
-        children: [
-          Center(child: ElevatedButton(onPressed: (){},
-              child: Text('Checkout')
-          )
-          )
-        ],
+      body: Align(
+        alignment: AlignmentGeometry.bottomCenter,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            SizedBox(
+              height: 60,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.black87,
+                  backgroundColor: Colors.lightBlueAccent,
+                  padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4),
+                  )
+                ),
+                  onPressed: (){},
+                  child: Column(
+                    children: [
+                      Icon(Icons.shopping_cart_checkout,size: 20,),
+                      Text('Checkout'),
+                    ],
+                  )
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

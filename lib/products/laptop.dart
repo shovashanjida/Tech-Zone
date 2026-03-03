@@ -7,6 +7,9 @@ class Laptop extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: Text('Laptop page'),
+          backgroundColor: Colors.black87,
+          foregroundColor: Colors.white,
+
         ),
         body: Center(
           child: Text('Laptop Page',
