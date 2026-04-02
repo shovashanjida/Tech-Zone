@@ -26,7 +26,6 @@ class _CartPageState extends State<CartPage>{
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.black87,
-                  backgroundColor: Colors.lightBlueAccent,
                   padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(4),

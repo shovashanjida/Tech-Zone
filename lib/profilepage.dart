@@ -25,7 +25,6 @@ class _ProfilePageState extends State<ProfilePage>{
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.black87,
-                      backgroundColor: Colors.red,
                       padding: EdgeInsets.symmetric(horizontal: 18, vertical: 10),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(4),
