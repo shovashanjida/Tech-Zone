@@ -8,7 +8,6 @@ class CartPage extends StatefulWidget{
 
 }
 
-//new comment
 class _CartPageState extends State<CartPage>{
   @override
   Widget build(BuildContext context) {
@@ -24,13 +23,13 @@ class _CartPageState extends State<CartPage>{
             SizedBox(
               height: 60,
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.black87,
-                  padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(4),
-                  )
-                ),
+                  style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.black87,
+                      padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4),
+                      )
+                  ),
                   onPressed: (){},
                   child: Column(
                     children: [

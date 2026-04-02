@@ -12,7 +12,7 @@ class _ActivityPage extends State<ActivityPage>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Activity'),
-      backgroundColor: Colors.black87,
+        backgroundColor: Colors.black87,
         foregroundColor: Colors.white,),
       body:  Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,8 +95,8 @@ class _ActivityPage extends State<ActivityPage>{
               ),
             ],
           ),
-            ],
-          ),
+        ],
+      ),
     );
   }
 }

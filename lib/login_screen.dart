@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tech_zone_ui/mainscreen.dart';
 
-
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -49,9 +48,9 @@ class _LoginPageState extends State<LoginPage> {
 
                 TextField(
                   controller: _emailController,
-                  //keyboardType: TextInputType.emailAddress,
+                  keyboardType: TextInputType.emailAddress,
                   decoration: const InputDecoration(
-                    labelText: 'Gmail',
+                    labelText: 'Email',
                     border: OutlineInputBorder(),
                   ),
                 ),

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tech_zone_ui/splash_screen.dart';
 
-void main() {
-  runApp(const MyApp());
+
+void main(){
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -11,13 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Tech',
-      debugShowCheckedModeBanner: false,
+      title: 'tech',
       theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.grey),
+        primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),//MainScreen
+      home: SplashScreen(),
     );
   }
 }
-

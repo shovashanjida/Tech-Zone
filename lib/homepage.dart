@@ -14,32 +14,33 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Home'),
-      backgroundColor: Colors.black87,
-      foregroundColor: Colors.white,),
-      drawer: const CustomDrawer(),//Susmita
-      
-      body: Column(
-        children: [
-          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        appBar: AppBar(title: Text('Home'),
+          backgroundColor: Colors.black87,
+          foregroundColor: Colors.white,),
+        drawer: const CustomDrawer(),//Susmita
+
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GridView.count(crossAxisCount: 3,
             children: [
               InkWell(
-                  child: Column(
-                    children: [
-                      SizedBox(
-                          width: 100,
-                          height: 100,
-                          child:
-                            Image.asset('assets/homepageImage/smartphone1.png')
-                        ),
-                      Text('Smartphone'),
-                    ],
-                  ),
+                child: Column(
+                  children: [
+                    SizedBox(
+                        width: 100,
+                        height: 100,
+                        child:
+                        Image.asset('assets/homepageImage/smartphone1.png')
+                    ),
+                    Text('Smartphone'),
+                  ],
+                ),
+                //smartphone
                 onTap: (){
                   Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Laptop()),
                   );
-                  },
+                },
               ),
               InkWell(
                 child: Column(
@@ -52,6 +53,7 @@ class _HomePageState extends State<HomePage> {
                     Text('Desktop'),
                   ],
                 ),
+                //desktop
                 onTap: (){//desktop page
                   Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Laptop()),
@@ -74,25 +76,23 @@ class _HomePageState extends State<HomePage> {
                       MaterialPageRoute(builder: (context) => Laptop(),));
                 },
               ),
-          ]),
-          Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-                  InkWell(
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          width: 100,
-                          height: 100,
-                          child: Image.asset('assets/homepageImage/printer1.png'),
-                        ),
-                        Text('Printer')
-                      ],
+              InkWell(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width: 100,
+                      height: 100,
+                      child: Image.asset('assets/homepageImage/printer1.png'),
                     ),
-                    onTap: (){//printer page
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Laptop(),));
-                    },
-                  ),
+                    Text('Printer')
+                  ],
+                ),
+                //printer gpu
+                onTap: (){//printer page
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Laptop(),));
+                },
+              ),
               InkWell(
                 child: Column(
                   children: [
@@ -104,6 +104,7 @@ class _HomePageState extends State<HomePage> {
                     Text('Monitor'),
                   ],
                 ),
+                //monitor
                 onTap: (){//monitor page
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Laptop(),));
@@ -120,15 +121,12 @@ class _HomePageState extends State<HomePage> {
                     Text('RAM'),
                   ],
                 ),
+                //ram
                 onTap: (){//ram page
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Laptop(),));
                 },
               ),
-            ],
-          ),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
               InkWell(
                 child: Column(
                   children: [
@@ -140,6 +138,7 @@ class _HomePageState extends State<HomePage> {
                     Text('MotherBoard'),
                   ],
                 ),
+                //motherboard
                 onTap: (){//motherboard page
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Laptop(),));
@@ -177,10 +176,8 @@ class _HomePageState extends State<HomePage> {
                       MaterialPageRoute(builder: (context) => Laptop(),));
                 },
               ),
-            ],
-          ),
-        ],
-      ),
+            ],),
+        )
     );
   }
 }
