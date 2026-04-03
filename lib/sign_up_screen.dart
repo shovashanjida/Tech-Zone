@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tech_zone_ui/mainscreen.dart';
 
@@ -10,9 +11,36 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
 
+  final _formKey = GlobalKey<FormState>();
   final _nameCtrl = TextEditingController();
   final _gmailCtrl = TextEditingController();
   final _passCtrl = TextEditingController();
+
+  Future<void> _signUp() async{
+    if(!_formKey.currentState!.validate()){
+      return;
+    }
+    try{
+      final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: _gmailCtrl.text.trim(),
+          password: _passCtrl.text.trim()
+      );
+      await credential.user!.updateDisplayName(_nameCtrl.text.trim());
+      await credential.user!.reload();
+
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => MainScreen())
+      );
+    } on FirebaseAuthException catch(e){
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(e.message ?? 'Registration failed')),
+      );
+    }catch(e){
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error: ${e.toString()}')),
+      );
+    }
+  }
 
   @override
   void dispose() {
@@ -35,6 +63,8 @@ class _SignUpPageState extends State<SignUpPage> {
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(30),
+            child : Form(
+              key: _formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -46,31 +76,52 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 SizedBox(height: 40),
 
-                TextField(
+                TextFormField(
                   controller: _nameCtrl,
                   decoration: const InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    prefixIcon: Icon(Icons.person_outline),
                     labelText: 'Username',
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(12)),
+                    ),
                   ),
+                  validator: (value) =>
+                      value!.isEmpty ? 'Enter your full name' : null,
                 ),
                 SizedBox(height: 16),
 
-                TextField(
+                TextFormField(
                   controller: _gmailCtrl,
                   decoration: const InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    prefixIcon: Icon(Icons.person_outline),
                     labelText: 'Email',
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(12)),
+                    ),
                   ),
+                  validator: (value) =>
+                  value!.isEmpty ? 'Enter your email' : null,
                 ),
                 SizedBox(height: 16),
 
-                TextField(
+                TextFormField(
                   controller: _passCtrl,
                   obscureText: true,
                   decoration: const InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    prefixIcon: Icon(Icons.person_outline),
                     labelText: 'Password',
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(12)),
+                    ),
                   ),
+                  validator: (value) =>
+                      value!.length < 6 ? 'Minimum 6 characters' : null,
                 ),
                 SizedBox(height: 26),
 
@@ -78,11 +129,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   width: double.infinity,
                   height: 49,
                   child: ElevatedButton(
-                    onPressed: (){
+                    onPressed: _signUp,
                       //HOME SCREEN ROUTE
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => MainScreen(),));
-                    },
+
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
                       shape: RoundedRectangleBorder(
@@ -104,6 +153,7 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
           ),
         ),
+      ),
       ),
     );
   }
