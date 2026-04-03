@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_zone_ui/welcome_page.dart';
 
 class ProfilePage extends StatefulWidget{
   const ProfilePage({super.key});
@@ -30,7 +31,13 @@ class _ProfilePageState extends State<ProfilePage>{
                         borderRadius: BorderRadius.circular(4),
                       )
                   ),
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(
+                          builder: (context) => WelcomePage(),
+                        )
+                    );
+                  },
                   child: Column(
                     children: [
                       Icon(Icons.logout,size: 20,),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'activitypage.dart';
+import 'order.dart';
 import 'cartpage.dart';
 import 'homepage.dart';
 import 'pcbuilderpage.dart';
@@ -39,15 +39,13 @@ class _MainScreenState extends State<MainScreen> {
               index=value;
             });
           },
-          //indicatorColor: Colors.blueGrey,
-          //backgroundColor: Colors.white,
           destinations: [
             NavigationDestination(
                 icon: Image.asset("assets/icons/home.png",width: 25,),
                 label: "Home"),
             NavigationDestination(
                 icon: Image.asset("assets/icons/activity.png",width: 29,),
-                label: "Activity"),
+                label: "Orders"),
             NavigationDestination(
                 icon: Image.asset("assets/icons/pc-builder.png",width: 25,),
                 label: "PC Builder"),
