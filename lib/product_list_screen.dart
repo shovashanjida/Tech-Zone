@@ -2,24 +2,30 @@ import 'package:flutter/material.dart';
 import '../data/dummy_products.dart';
 
 class ProductListScreen extends StatelessWidget {
-  final String brand;
+  final String? brand;
   final String category;
 
   const ProductListScreen({
     super.key,
-    required this.brand,
+    this.brand,
     required this.category,
   });
 
   @override
   Widget build(BuildContext context) {
 
-    final filteredProducts = dummyProducts.where(
-          (p) => p.category == category && p.brand == brand,
-    ).toList();
+    final filteredProducts = dummyProducts.where((p) {
+      if (brand == null) {
+        return p.category == category;
+      } else {
+        return p.category == category && p.brand == brand;
+      }
+    }).toList();
     return Scaffold(
       appBar: AppBar(
-        title: Text("$brand $category"),
+        title: Text(
+        brand == null ? category : "$brand $category",
+      ),
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(12),

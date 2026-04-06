@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'custom_drawer.dart';
-import 'products/laptop.dart';
+import 'product_list_screen.dart';
 
 
 class HomePage extends StatefulWidget{
@@ -37,8 +37,13 @@ class _HomePageState extends State<HomePage> {
                 ),
                 //smartphone
                 onTap: (){
-                  Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Laptop()),
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProductListScreen(
+                        category: "Smartphone",
+                      ),
+                    ),
                   );
                 },
               ),
@@ -54,9 +59,14 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 //desktop
-                onTap: (){//desktop page
-                  Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Laptop()),
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProductListScreen(
+                        category:"Desktop PC",
+                      ),
+                    ),
                   );
                 },
               ),
@@ -72,8 +82,14 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 onTap: (){
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Laptop(),));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProductListScreen(
+                        category: "Laptop",
+                      ),
+                    ),
+                  );
                 },
               ),
               InkWell(
@@ -88,9 +104,15 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 //printer gpu
-                onTap: (){//printer page
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Laptop(),));
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProductListScreen(
+                        category: "Smartphone",
+                      ),
+                    ),
+                  );
                 },
               ),
               InkWell(
@@ -105,9 +127,15 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 //monitor
-                onTap: (){//monitor page
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Laptop(),));
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProductListScreen(
+                        category: "Monitor",
+                      ),
+                    ),
+                  );
                 },
               ),
               InkWell(
@@ -122,9 +150,16 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 //ram
-                onTap: (){//ram page
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Laptop(),));
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProductListScreen(
+                        category: "PC Components",
+                        brand: "RAM",
+                      ),
+                    ),
+                  );
                 },
               ),
               InkWell(
@@ -139,9 +174,16 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 //motherboard
-                onTap: (){//motherboard page
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Laptop(),));
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProductListScreen(
+                        category: "PC Components",
+                        brand: "RAM",
+                      ),
+                    ),
+                  );
                 },
               ),
               InkWell(
@@ -155,9 +197,16 @@ class _HomePageState extends State<HomePage> {
                     Text('SSD'),
                   ],
                 ),
-                onTap: (){//ssd page
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Laptop(),));
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProductListScreen(
+                        category: "PC Components",
+                        brand: "SSD",
+                      ),
+                    ),
+                  );
                 },
               ),
               InkWell(
@@ -171,9 +220,16 @@ class _HomePageState extends State<HomePage> {
                     Text('Processor'),
                   ],
                 ),
-                onTap: (){//cpu page
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Laptop(),));
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProductListScreen(
+                        category: "PC Components",
+                        brand: "RAM",
+                      ),
+                    ),
+                  );
                 },
               ),
             ],),
