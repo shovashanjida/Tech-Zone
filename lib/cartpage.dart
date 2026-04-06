@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tech_zone_ui/global_variable.dart';
+import 'products/checkout_screen.dart';
 
 class CartPage extends StatefulWidget{
   const CartPage({super.key});
@@ -109,7 +110,14 @@ class _CartPageState extends State<CartPage>{
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,
                           ),
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CheckoutScreen(cartItems: cartItems),
+                        ),
+                      );
+                    },
                     icon:
                     Icon(
                       Icons.shopping_cart_checkout,

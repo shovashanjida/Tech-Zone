@@ -24,7 +24,7 @@ class Laptop extends StatelessWidget{
               padding: const EdgeInsets.only(bottom: 16),
               child: InkWell(
                 onTap: (){
-                  //navingation to details page
+                  //navigation to details page
                 },
 
                 child: Container(
