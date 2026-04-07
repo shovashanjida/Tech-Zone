@@ -226,7 +226,7 @@ class _HomePageState extends State<HomePage> {
                     MaterialPageRoute(
                       builder: (context) => const ProductListScreen(
                         category: "PC Components",
-                        brand: "RAM",
+                        brand: "GPU",
                       ),
                     ),
                   );
