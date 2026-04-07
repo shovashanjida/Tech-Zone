@@ -56,7 +56,7 @@ class WelcomePage extends StatelessWidget {
                     ),
                     onPressed: () {
                       //sign up page route
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(builder: (context) => SignUpPage()),
                       );
