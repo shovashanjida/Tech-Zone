@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../data/dummy_products.dart';
+import '../products/product_detail_screen.dart';
 
 class ProductListScreen extends StatelessWidget {
   final String? brand;
@@ -32,8 +33,16 @@ class ProductListScreen extends StatelessWidget {
         itemCount: filteredProducts.length,
         itemBuilder: (context, index) {
           final product = filteredProducts[index];
-
-          return Card(
+          return InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProductDetailScreen(product: product),
+                ),
+              );
+            },
+            child: Card(
             margin: const EdgeInsets.only(bottom: 15),
             elevation: 3,
             shape: RoundedRectangleBorder(
@@ -95,6 +104,7 @@ class ProductListScreen extends StatelessWidget {
                 ],
               ),
             ),
+          ),
           );
         },
       ),
