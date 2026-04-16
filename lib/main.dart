@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:tech_zone_ui/firebase_options.dart';
 import 'package:tech_zone_ui/splash_screen.dart';
 
-
-
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(

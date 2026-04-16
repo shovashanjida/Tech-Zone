@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import '../global_variable.dart';
 import '../models/product.dart';
 import 'success_screen.dart';
 
@@ -36,7 +37,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         "products": widget.cartItems.map((e) => e.name).toList(),
       });
       print(data.id);
-      Navigator.push(
+
+      cartItems.clear();
+
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (context) => const SuccessScreen(),

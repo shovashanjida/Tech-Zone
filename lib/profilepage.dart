@@ -1,51 +1,79 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tech_zone_ui/welcome_page.dart';
 
-class ProfilePage extends StatefulWidget{
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
   @override
-  State<StatefulWidget> createState() => _ProfilePageState();
-
+  State<ProfilePage> createState() => _ProfilePageState();
 }
 
-class _ProfilePageState extends State<ProfilePage>{
+class _ProfilePageState extends State<ProfilePage> {
+
+  final user = FirebaseAuth.instance.currentUser;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('User Profile'),
+      appBar: AppBar(
+        title: const Text('User Profile'),
         backgroundColor: Colors.black87,
-        foregroundColor: Colors.white,),
-      body: Align(
-        alignment: AlignmentGeometry.bottomRight,
+        foregroundColor: Colors.white,
+      ),
+
+      body: Padding(
+        padding: const EdgeInsets.all(20),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            SizedBox(
-              height: 60,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.black87,
-                      padding: EdgeInsets.symmetric(horizontal: 18, vertical: 10),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4),
-                      )
-                  ),
-                  onPressed: (){
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(
-                          builder: (context) => WelcomePage(),
-                        )
-                    );
-                  },
-                  child: Column(
-                    children: [
-                      Icon(Icons.logout,size: 20,),
-                      Text('Log Out'),
-                    ],
-                  )
+
+            const CircleAvatar(
+              radius: 50,
+              backgroundColor: Colors.black12,
+              child: Icon(
+                Icons.person,
+                size: 50,
+                color: Colors.black54,
               ),
-            )
+            ),
+
+            const SizedBox(height: 20),
+
+            Text(
+              user?.email ?? "No Email",
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+
+            const SizedBox(height: 10),
+
+            SizedBox(
+              width: double.infinity,
+              height: 50,
+              child: ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                ),
+                onPressed: () async {
+                  await FirebaseAuth.instance.signOut();
+
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const WelcomePage(),
+                    ),
+                        (route) => false,
+                  );
+                },
+                icon: const Icon(Icons.logout, color: Colors.white),
+                label: const Text(
+                  'Log Out',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
           ],
         ),
       ),

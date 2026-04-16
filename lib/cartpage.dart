@@ -111,7 +111,7 @@ class _CartPageState extends State<CartPage>{
                           backgroundColor: Colors.black,
                           ),
                     onPressed: (){
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                           builder: (context) => CheckoutScreen(cartItems: cartItems),
